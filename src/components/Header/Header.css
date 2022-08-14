@@ -4,4 +4,56 @@
     background: linear-gradient(0deg, rgba(228,228,228,1) 0%, rgba(77,60,60,1) 100%);
     border-bottom: 2px solid #737171;
     box-shadow: 1px 1px 11px 0px black; 
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 24px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.libreria-header-nav {
+    width: 100%;
+    padding: 10px 20px;
+}
+.libreria-header-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.libreria-header-list-item {
+    list-style-type: none;
+    display: inline-block;
+    padding: 10px 20px;
+}
+
+.libreria-header-list-link {
+    text-decoration: none;
+    color: white;
+    border: none;
+}
+
+.libreria-header-list-link:hover {
+    border: none;
+    cursor: pointer;
+}
+
+.active-link {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.header-icon {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.header-icon:hover {
+    cursor: pointer;
+    font-size: 40px;
+}
+
+.libreria-header-list-left {
+    height: 40px;
 }
