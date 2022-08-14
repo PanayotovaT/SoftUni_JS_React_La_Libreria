@@ -12,7 +12,7 @@ const Header = () => {
             <nav className="libreria-header-nav">
                 <ul className="libreria-header-list">
                     <div className="libreria-header-list-left">
-                        <li className="libreria-header-list-item"><FontAwesomeIcon icon={faBookOpen} className="header-icon" ><NavLink className={activeClass} to="/"/ ></FontAwesomeIcon></li>
+                        <li className="libreria-header-list-item"><NavLink className={activeClass} to="/"><FontAwesomeIcon icon={faBookOpen} className="header-icon" / ></NavLink></li>
                         <li className="libreria-header-list-item"><NavLink className={activeClass} to="/catalogue">Catalogue</NavLink></li>
                     </div>
                     <div className="libreria-header-list-left">
