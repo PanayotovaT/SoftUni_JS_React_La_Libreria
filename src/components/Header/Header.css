@@ -1,0 +1,7 @@
+.libreria-header {
+    height: 200px;
+    width: 100%;
+    background: linear-gradient(0deg, rgba(228,228,228,1) 0%, rgba(77,60,60,1) 100%);
+    border-bottom: 2px solid #737171;
+    box-shadow: 1px 1px 11px 0px black; 
+}
