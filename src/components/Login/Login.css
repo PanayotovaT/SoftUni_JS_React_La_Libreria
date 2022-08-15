@@ -1,0 +1,40 @@
+.libreria-login {
+    height: 100vh;
+}
+
+.libreria-login-form {
+    height: 100%;
+}
+
+.libreria-login-fieldset {
+    height: 100%;
+    padding-top: 60px;
+
+background: white;
+border: 1px solid black;
+border-radius: 8px;
+}
+
+.login-form-div {
+    height: 60px;
+}
+.login-form-label {
+    margin: 30px 20px;
+    width: 200px;
+}
+
+.login-form-input {
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    box-shadow: none;
+    border: 1px solid gray;
+}
+
+.login-btn {
+    margin-left: 100px;
+}
+
+.login-btn:hover{
+    cursor: pointer;
+}

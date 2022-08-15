@@ -18,7 +18,7 @@ const Header = () => {
                     <div className="libreria-header-list-left">
                         <li className="libreria-header-list-item"><NavLink className={activeClass} to="/create">Create</NavLink></li>
                         <li className="libreria-header-list-item"><NavLink className={activeClass} to="/my-profile">My Profile</NavLink></li>
-                        <li className="libreria-header-list-item"><NavLink className={activeClass} to="/login">Login</NavLink></li>
+                        <li className="libreria-header-list-item"><NavLink className={activeClass} to="/login">Sign In</NavLink></li>
                         <li className="libreria-header-list-item"><NavLink className={activeClass} to="/register">Register</NavLink></li>
                         <li className="libreria-header-list-item"><NavLink className="libreria-header-list-link" to="/logout">Logout</NavLink></li>
                     </div>

@@ -1,0 +1,57 @@
+.register-section {
+    height: 100vh;
+}
+
+.register-form {
+    height: 100%;
+}
+
+.register-fieldset {
+    height: 100%;
+    padding-top: 60px;
+
+background: white;
+border: 1px solid black;
+border-radius: 8px;
+}
+
+.register-form-div {
+    height: 60px;
+}
+.register-form-label {
+    display: inline-block;
+    margin: 30px 20px;
+    width: 150px;
+}
+
+.register-form-input {
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    box-shadow: none;
+    border: 1px solid gray;
+}
+
+.register-form-div-gender {
+    width: 300px;
+    display: inline-block;
+    padding-top: 15px;
+  }
+
+.register-form-gender-input {
+    margin-right: 70px;
+  }
+
+.register-form-span {
+    padding-right: 0px;
+    display: inline-block;
+    width: 150px
+}
+.register-btn {
+    margin-left: 190px;
+    margin-top:30px;
+}
+
+.register-btn:hover{
+    cursor: pointer;
+}

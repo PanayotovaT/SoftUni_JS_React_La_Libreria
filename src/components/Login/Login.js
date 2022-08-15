@@ -5,7 +5,7 @@ const Login = () => {
     return (
         <section className="libreria-login">
             <form className="libreria-login-form" method="POST">
-                <fieldset>
+                <fieldset className="libreria-login-fieldset">
                     <legend>Sign In Form</legend>
                     <div className="login-form-div">
                         <label htmlFor="username" className="login-form-label">Username</label>
@@ -16,7 +16,7 @@ const Login = () => {
                         <input type="password" className="login-form-input" id="password" name="password" />
                     </div>
                     <div className="login-form-div">
-                        <input type="submit" className="login-form-input" value="Sign In"/>
+                        <input type="submit" className="login-form-input login-btn" value="Sign In"/>
                     </div>
                 </fieldset>
             </form>

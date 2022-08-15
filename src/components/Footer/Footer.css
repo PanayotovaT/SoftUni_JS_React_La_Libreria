@@ -1,0 +1,9 @@
+.libreria-footer {
+    height: 100px;
+    background: gray;
+    text-align: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
