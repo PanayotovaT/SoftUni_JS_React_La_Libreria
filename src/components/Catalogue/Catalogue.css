@@ -1,0 +1,24 @@
+.catalogue-section {
+min-height: 80vh;
+}
+
+.catalogue-colection-title {
+    margin: 30px auto;
+}
+
+.catalogue-nodata-article-img {
+    border: 1px solid gray;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px;
+    background: white;
+    box-shadow: 1px 1px 3px 1px grey;
+}
+
+.catalogue-nodata-img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 1px 1px 3px 1px grey;
+
+
+}

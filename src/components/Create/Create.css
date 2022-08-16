@@ -1,0 +1,32 @@
+.create-section {
+    min-height: 80vh;
+    padding: 60px;
+    margin: 30px auto;
+}
+
+.create-form-fieldset {
+    /* border-radius: 8px; */
+    margin-bottom: 30px;
+    /* border: 1px solid grey; */
+}
+.create-form-legend {
+margin-bottom: 30px;   
+}
+
+.create-form-field {
+    margin-bottom: 30px;
+}
+.create-form-field label {
+    width:100px;
+    margin-right: 20px;
+}
+
+.create-form-field input,
+.create-form-field textarea {
+    width: 300px;
+    border: 1px solid grey;
+    border-radius: 6px;
+}
+.create-btn {
+    margin-left: 125px;
+}

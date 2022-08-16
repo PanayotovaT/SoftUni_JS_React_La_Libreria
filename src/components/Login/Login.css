@@ -29,11 +29,16 @@ border-radius: 8px;
     border-radius: 5px;
     box-shadow: none;
     border: 1px solid gray;
-}
+
+  }
+
 
 .login-btn {
     margin-left: 100px;
-}
+    margin-top: 30px;
+    margin-left: 240px;
+  }
+
 
 .login-btn:hover{
     cursor: pointer;

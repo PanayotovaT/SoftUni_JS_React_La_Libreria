@@ -37,6 +37,8 @@
 .libreria-header-list-link:hover {
     border: none;
     cursor: pointer;
+    color: white;
+    text-transform: uppercase;
 }
 
 .active-link {
