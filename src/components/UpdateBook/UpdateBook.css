@@ -1,0 +1,32 @@
+.update-section {
+    min-height: 80vh;
+    padding: 60px;
+    margin: 30px auto;
+}
+
+.update-form-fieldset {
+    /* border-radius: 8px; */
+    margin-bottom: 30px;
+    /* border: 1px solid grey; */
+}
+.update-form-legend {
+margin-bottom: 30px;   
+}
+
+.update-form-field {
+    margin-bottom: 30px;
+}
+.update-form-field label {
+    width:100px;
+    margin-right: 20px;
+}
+
+.update-form-field input,
+.update-form-field textarea {
+    width: 300px;
+    border: 1px solid grey;
+    border-radius: 6px;
+}
+.update-btn {
+    margin-left: 125px;
+}
