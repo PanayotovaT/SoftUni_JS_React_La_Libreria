@@ -1,10 +1,10 @@
 import Card from 'react-bootstrap/Card';
 
-import './ProfileCard.css';
+import './HomeCard.css';
 
-const ProfileCard = ({ card }) => {
+const HomeCard = ({ card }) => {
     return (
-        <Card style={{ width: '18rem' }} className="profile-card">
+        <Card style={{ width: '18rem' }} className="home-card">
             <Card.Img variant="top" src={card.imageUrl} />
             <Card.Body>
                 <Card.Title>{card.title}</Card.Title>
@@ -19,4 +19,4 @@ const ProfileCard = ({ card }) => {
     );
 }
 
-export default ProfileCard;
+export default HomeCard;

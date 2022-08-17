@@ -3,8 +3,6 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 import * as bookService from '../../services/bookService';
 
-import { useAuthContext } from '../../contexts/AuthContext';
-
 import './UpdateBook.css';
 
 const UpdateBook = () => {
@@ -21,7 +19,7 @@ const UpdateBook = () => {
                 console.error(err);
                 navigate(`/details/${bookId}`)
             })
-    },[]);
+    },[bookId, navigate]);
 
     const updateHandler =(e) => {
         e.preventDefault();

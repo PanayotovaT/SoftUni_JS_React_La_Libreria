@@ -10,6 +10,7 @@ const Login = () => {
     const navigate= useNavigate();
     const { login } = useAuthContext();
 
+
     const loginHandler = (e) => {
         e.preventDefault();
 
@@ -19,14 +20,15 @@ const Login = () => {
         authService.login({email, password})
             .then(data => {
                 login(data);
+
                 navigate('/');
             }).catch(err => {
-                console.error(err);
+                console.log(err.message);
                 return;
             })
 
     }
-    
+
     return (
         <section className="libreria-login">
             <form className="libreria-login-form" method="POST" onSubmit={loginHandler}>

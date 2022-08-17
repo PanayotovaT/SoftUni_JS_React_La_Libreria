@@ -23,23 +23,24 @@ function App() {
 
       <div className="App">
         <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/catalogue" element={<Catalogue />} />
 
-          <Route element={<PrivateRoute />}>
-            <Route path="/create" element={<Create />} />
-            <Route path="/details/:bookId" element={<Details />} />
-            <Route path="/update/:bookId" element={<UpdateBook />} />
-            <Route path="/my-profile" element={<MyProfile />} />
-            <Route path="/logout" element={<Logout />} />
-          </Route>
-          
-          <Route element={<PublicRoute />}>
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-          </Route>
-        </Routes>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/catalogue" element={<Catalogue />} />
+
+            <Route element={<PrivateRoute />}>
+              <Route path="/create" element={<Create />} />
+              <Route path="/details/:bookId" element={<Details />} />
+              <Route path="/update/:bookId" element={<UpdateBook />} />
+              <Route path="/my-profile" element={<MyProfile />} />
+              <Route path="/logout" element={<Logout />} />
+            </Route>
+
+            <Route element={<PublicRoute />}>
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+            </Route>
+          </Routes>
         <Footer />
       </div>
     </AuthProvider>

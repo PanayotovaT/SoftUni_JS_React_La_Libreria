@@ -1,3 +1,8 @@
 .catalogue-card {
     margin:30px;
+    width: 400px;
+}
+
+.card {
+    width: 400px;
 }

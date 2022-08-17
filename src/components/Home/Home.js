@@ -2,12 +2,12 @@ import { useState, useEffect } from 'react';
 import * as bookService from '../../services/bookService';
 
 import './Home.css';
-import HomeSlide from './HomeSlide';
+import HomeCard from './HomeCard'
 
 const Home = () => {
     const [books, setBooks] = useState([]);
 
-    useEffect(()=> {
+    useEffect(() => {
         bookService.getAll()
             .then(res => {
                 console.log(res);
@@ -27,7 +27,19 @@ const Home = () => {
                 <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
 
             </article>
-            <HomeSlide books={books} />
+            <section className="home-book-section">
+                {books.length > 0
+                    ? books.slice(0,3).map(x => <HomeCard card={x} key={x._id} />)
+                    : (<article className="home-nodata-image-article">
+                        <h1>No books in the database!</h1>
+                        <img src="https://images.theconversation.com/files/45159/original/rptgtpxd-1396254731.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=754&fit=clip" alt="no data" />
+                    </article>)
+                }
+
+
+            </section >
+
+            {/* <HomeSlide books={books} /> */}
 
         </section>
     )

@@ -1,0 +1,11 @@
+.home-card {
+    /* height: fit-content; */
+    height:400px;
+    /* padding:30px;
+    margin:30px; */
+}
+
+
+.home-card.card{
+    width:15rem;
+}

@@ -19,7 +19,7 @@ const MyProfile = () => {
                 console.log(err.message);
                 return;
             })
-    }, []);
+    }, [user._id]);
 
     return (
         <section className="profile-section">
