@@ -1,15 +1,40 @@
+import { useNavigate } from 'react-router-dom';
+
+import * as authService from '../../services/authServices';
+import { useAuthContext } from '../../contexts/AuthContext';
+
+
 import './Login.css';
 
 const Login = () => {
+    const navigate= useNavigate();
+    const { login } = useAuthContext();
 
+    const loginHandler = (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(e.currentTarget);
+        const {email, password} = Object.fromEntries(formData);
+
+        authService.login({email, password})
+            .then(data => {
+                login(data);
+                navigate('/');
+            }).catch(err => {
+                console.error(err);
+                return;
+            })
+
+    }
+    
     return (
         <section className="libreria-login">
-            <form className="libreria-login-form" method="POST">
+            <form className="libreria-login-form" method="POST" onSubmit={loginHandler}>
                 <fieldset className="libreria-login-fieldset">
                     <legend>Sign In Form</legend>
                     <div className="login-form-div">
-                        <label htmlFor="username" className="login-form-label">Username</label>
-                        <input type="text" className="login-form-input" id="username" name="username" placeholder="username"/>
+                        <label htmlFor="email" className="login-form-label">Email</label>
+                        <input type="text" className="login-form-input" id="email" name="email" placeholder="mimi@abv.bg..."/>
                     </div>
                     <div className="login-form-div">
                         <label htmlFor="password" className="login-form-label">Password</label>

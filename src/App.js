@@ -1,5 +1,7 @@
-import './App.css';
-import {Routes, Route} from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+
+import { AuthProvider } from './contexts/AuthContext';
+
 import Header from './components/Header/Header';
 import Login from './components/Login/Login';
 import Footer from './components/Footer/Footer';
@@ -9,22 +11,26 @@ import Details from './components/Details/Details';
 import Catalogue from './components/Catalogue/Catalogue';
 import Create from './components/Create/Create';
 import UpdateBook from './components/UpdateBook/UpdateBook';
+import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/catalogue" element={<Catalogue />} />
-        <Route path="/create" element={<Create />} />
-        <Route path="/details/:bookId" element={<Details />} />
-        <Route path="/update/:bookId" element={<UpdateBook />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register/>} />
-      </Routes>
-      <Footer />
-    </div>
+    <AuthProvider>
+
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/catalogue" element={<Catalogue />} />
+          <Route path="/create" element={<Create />} />
+          <Route path="/details/:bookId" element={<Details />} />
+          <Route path="/update/:bookId" element={<UpdateBook />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+        <Footer />
+      </div>
+    </AuthProvider>
   );
 }
 
