@@ -10,7 +10,6 @@ const Home = () => {
     useEffect(() => {
         bookService.getAll()
             .then(res => {
-                console.log(res);
                 setBooks(Object.values(res));
             })
             .catch(err => {
@@ -36,10 +35,8 @@ const Home = () => {
                     </article>)
                 }
 
-
             </section >
 
-            {/* <HomeSlide books={books} /> */}
 
         </section>
     )

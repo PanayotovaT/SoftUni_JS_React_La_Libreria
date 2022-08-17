@@ -4,7 +4,7 @@ min-height: 80vh;
 
 .catalogue-colection-list {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: space-evenly;
 }
 .catalogue-colection-title {

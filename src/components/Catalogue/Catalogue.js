@@ -25,7 +25,7 @@ const Catalogue = () => {
                 <h1 className="catalogue-colection-title">Welcome to the Books Catalogue</h1>
                 <ul className="catalogue-colection-list">
                     {books.length > 0
-                        ? books.map(x => <CatalogueCard key="x._id" card={x} />)
+                        ? books.map(x => <CatalogueCard key={x._id} card={x} />)
                         : (<div className="catalogue-nodata">
                             <h2 className="catalogue-nodata-msg">No Books in database!</h2>
                             <article className="catalogue-nodata-article-img">

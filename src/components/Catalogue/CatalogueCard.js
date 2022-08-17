@@ -6,7 +6,7 @@ import './CatalogueCard.css';
 
 const CatalogueCard = ({ card }) => {
     return (
-        <Card style={{ width: '18rem' }} className="catalogue-card">
+        <Card  className="catalogue-card">
             <Card.Img variant="top" src={card.imageUrl} />
             <Card.Body>
                 <Card.Title>{card.title}</Card.Title>
