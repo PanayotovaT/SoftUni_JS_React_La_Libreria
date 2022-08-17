@@ -2,11 +2,12 @@ import { Link } from 'react-router-dom';
 
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import './CatalogueCard.css';
 
-const CatalogueCard = ({ card }) => {
+import './ProfileCard.css';
+
+const ProfileCard = ({ card }) => {
     return (
-        <Card style={{ width: '18rem' }} className="catalogue-card">
+        <Card style={{ width: '18rem' }} className="profile-card">
             <Card.Img variant="top" src={card.imageUrl} />
             <Card.Body>
                 <Card.Title>{card.title}</Card.Title>
@@ -16,10 +17,9 @@ const CatalogueCard = ({ card }) => {
                 <Card.Text>
                    {card.author}
                 </Card.Text>
-                <Link to={`/details/${card._id}`}><Button variant="primary">Details</Button></Link>
             </Card.Body>
         </Card>
     );
 }
 
-export default CatalogueCard;
+export default ProfileCard;

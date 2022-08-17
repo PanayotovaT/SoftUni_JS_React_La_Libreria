@@ -13,6 +13,7 @@ import Create from './components/Create/Create';
 import UpdateBook from './components/UpdateBook/UpdateBook';
 import './App.css';
 import Logout from './components/Logout/Logout';
+import MyProfile from './components/MyProfile/MyProfile';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/catalogue" element={<Catalogue />} />
+          <Route path="/my-profile" element={<MyProfile />} />
           <Route path="/create" element={<Create />} />
           <Route path="/details/:bookId" element={<Details />} />
           <Route path="/update/:bookId" element={<UpdateBook />} />
