@@ -27,6 +27,7 @@ const Register = () => {
 
         authService.register(registerData)
             .then(data => {
+                console.log(data);
                 login(data);
                 navigate('/')
             }).catch(err => {

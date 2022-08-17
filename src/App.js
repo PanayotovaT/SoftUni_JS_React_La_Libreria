@@ -12,6 +12,7 @@ import Catalogue from './components/Catalogue/Catalogue';
 import Create from './components/Create/Create';
 import UpdateBook from './components/UpdateBook/UpdateBook';
 import './App.css';
+import Logout from './components/Logout/Logout';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/update/:bookId" element={<UpdateBook />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/logout" element={<Logout />} />
         </Routes>
         <Footer />
       </div>
