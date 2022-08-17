@@ -18,8 +18,9 @@ const Details = () => {
                 setBook(res)
             }).catch(err => {
                 console.log(err);
+                navigate('/');
             })
-    }, []);
+    }, [bookId, navigate]);
 
     const deleteHandler = (e) =>{
         e.preventDefault();

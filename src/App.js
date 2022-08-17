@@ -14,6 +14,8 @@ import UpdateBook from './components/UpdateBook/UpdateBook';
 import './App.css';
 import Logout from './components/Logout/Logout';
 import MyProfile from './components/MyProfile/MyProfile';
+import PrivateRoute from './common/PrivateRoute';
+import PublicRoute from './common/PublicRoute';
 
 function App() {
   return (
@@ -24,13 +26,19 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/catalogue" element={<Catalogue />} />
-          <Route path="/my-profile" element={<MyProfile />} />
-          <Route path="/create" element={<Create />} />
-          <Route path="/details/:bookId" element={<Details />} />
-          <Route path="/update/:bookId" element={<UpdateBook />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/logout" element={<Logout />} />
+
+          <Route element={<PrivateRoute />}>
+            <Route path="/create" element={<Create />} />
+            <Route path="/details/:bookId" element={<Details />} />
+            <Route path="/update/:bookId" element={<UpdateBook />} />
+            <Route path="/my-profile" element={<MyProfile />} />
+            <Route path="/logout" element={<Logout />} />
+          </Route>
+          
+          <Route element={<PublicRoute />}>
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+          </Route>
         </Routes>
         <Footer />
       </div>
