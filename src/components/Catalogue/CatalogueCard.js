@@ -3,19 +3,19 @@ import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-const CatalogueCard = () => {
+const CatalogueCard = ({ card }) => {
     return (
-        <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
+        <Card style={{ width: '18rem' }} className="catalogue-card">
+            <Card.Img variant="top" src={card.imageUrl} />
             <Card.Body>
-                <Card.Title>Card Title</Card.Title>
+                <Card.Title>{card.title}</Card.Title>
                 <Card.Text>
-                    Category
+                    {card.category}
                 </Card.Text>
                 <Card.Text>
-                   Author
+                   {card.author}
                 </Card.Text>
-                <Link to="/details/bookId"><Button variant="primary">Details</Button></Link>
+                <Link to={`/details/${card._id}`}><Button variant="primary">Details</Button></Link>
             </Card.Body>
         </Card>
     );

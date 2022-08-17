@@ -2,6 +2,11 @@
 min-height: 80vh;
 }
 
+.catalogue-colection-list {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
 .catalogue-colection-title {
     margin: 30px auto;
 }

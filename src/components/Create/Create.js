@@ -1,10 +1,35 @@
+import { useNavigate } from 'react-router-dom';
+
+import * as bookService from '../../services/bookService';
+
 import './Create.css';
 
 const Create = () => {
+    const navigate = useNavigate();
+
+    const createHandler =(e) => {
+        e.preventDefault();
+
+        const formData = new FormData(e.currentTarget);
+
+        const { title, category, imageUrl, price, author, description} = Object.fromEntries(formData);
+        const book =  { title, category, imageUrl, price, author, description};
+
+        bookService.create(book)
+            .then(data => {
+
+                navigate('/catalogue')
+            })
+            .catch(err => {
+                console.log(err.message);
+                return;
+            })
+
+    }
 
     return (
         <section className="create-section">
-            <form className="create-form" method="POST">
+            <form className="create-form" method="POST" onSubmit={createHandler}>
                 <fieldset className="create-form-fieldset">
                     <legend className="create-form-legend" >Add a new book to the library</legend>
                         <div className="create-form-field" >
