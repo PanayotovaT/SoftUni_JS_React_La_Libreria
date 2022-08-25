@@ -2,6 +2,8 @@ import { useState, useEffect} from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 import * as bookService from '../../services/bookService';
+import { useNotificationContext, types} from '../../contexts/NotificationContext';
+
 
 import './UpdateBook.css';
 
@@ -9,6 +11,7 @@ const UpdateBook = () => {
     const navigate = useNavigate();
     const [book, setBook] = useState({});
     const {bookId } = useParams();
+    const { showNotification } = useNotificationContext();
 
     useEffect(() => {
         bookService.getOne(bookId)
@@ -28,15 +31,18 @@ const UpdateBook = () => {
         const {title, category, imageUrl, price, author, description} = Object.fromEntries(formData);
 
         if(title == '' || category == '' || imageUrl == '' || price == '' || author == '' || description == '') {
+            showNotification('All fields are required', types.error)
             throw new Error('All fields are required');
         }
         const updatedBook = {title, category, imageUrl, price, author, description};
 
         bookService.update(bookId, updatedBook)
             .then(res => {
+                showNotification('You have successfully updated ' + title + '!', types.info);
                 navigate(`/details/${bookId}`);
             }).catch(err => {
                 console.error(err.message);
+                showNotification(err.message, types.error);
                 return;
             })
 

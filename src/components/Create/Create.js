@@ -1,12 +1,13 @@
 import { useNavigate } from 'react-router-dom';
 
 import * as bookService from '../../services/bookService';
+import { useNotificationContext, types } from '../../contexts/NotificationContext';
 
 import './Create.css';
 
 const Create = () => {
     const navigate = useNavigate();
-
+    const { showNotification } = useNotificationContext();
     const createHandler =(e) => {
         e.preventDefault();
 
@@ -14,14 +15,19 @@ const Create = () => {
 
         const { title, category, imageUrl, price, author, description} = Object.fromEntries(formData);
         const book =  { title, category, imageUrl, price, author, description};
+        if(title == '' || category == '' || imageUrl == '' || price == '' || author == '' || description == '') {
+            showNotification('All fields are required!', types.error);
+            return;
+        }
 
         bookService.create(book)
             .then(data => {
-
+                showNotification('You have successfully created ' + title + '!', types.info);
                 navigate('/catalogue')
             })
             .catch(err => {
                 console.log(err.message);
+                showNotification(err.message, types.error);
                 return;
             })
 

@@ -38,7 +38,7 @@
     border: none;
     cursor: pointer;
     color: white;
-    text-transform: uppercase;
+    text-decoration: underline;
 }
 
 .active-link {
@@ -53,7 +53,7 @@
 
 .header-icon:hover {
     cursor: pointer;
-    font-size: 40px;
+    /* font-size: 40px; */
 }
 
 .libreria-header-list-left {
