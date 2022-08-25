@@ -17,6 +17,7 @@ import Logout from './components/Logout/Logout';
 import MyProfile from './components/MyProfile/MyProfile';
 import PrivateRoute from './common/PrivateRoute';
 import PublicRoute from './common/PublicRoute';
+import Notification from './common/Notification';
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
 
         <div className="App">
           <Header />
-
+          <Notification />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/catalogue" element={<Catalogue />} />
