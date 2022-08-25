@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 
 import { AuthProvider } from './contexts/AuthContext';
+import { NotificationProvider } from './contexts/NotificationContext';
 
 import Header from './components/Header/Header';
 import Login from './components/Login/Login';
@@ -20,9 +21,10 @@ import PublicRoute from './common/PublicRoute';
 function App() {
   return (
     <AuthProvider>
+      <NotificationProvider>
 
-      <div className="App">
-        <Header />
+        <div className="App">
+          <Header />
 
           <Routes>
             <Route path="/" element={<Home />} />
@@ -41,8 +43,9 @@ function App() {
               <Route path="/register" element={<Register />} />
             </Route>
           </Routes>
-        <Footer />
-      </div>
+          <Footer />
+        </div>
+      </NotificationProvider>
     </AuthProvider>
   );
 }
