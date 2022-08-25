@@ -9,6 +9,7 @@ const Notification = () => {
     if(!notification.show) {
         return null
     }
+    console.log('Hi');
 
     return (
 

@@ -23,11 +23,13 @@ export const NotificationProvider = ({children}) => {
     const hideNotification = () =>  setNotification(initialNotification);
 
     const showNotification = (message, type = types.error) => {
+        console.log('notify');
             setNotification({
                 show:true,
                 message,
                 type
             });
+            console.log(notification.show);
             setTimeout(() => {
                 setNotification(initialNotification);
             }, 4000);
