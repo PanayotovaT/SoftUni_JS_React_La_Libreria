@@ -9,14 +9,13 @@ const Notification = () => {
     if(!notification.show) {
         return null
     }
-    console.log('Hi');
 
     return (
 
         <Toast className="d-inline-block m-1 notification " bg={notification.type} >
-        <Toast.Header onClick={hideNotification} closeButton={false}>
+        <Toast.Header onClick={hideNotification} closeButton={true}>
           <img src="holder.js/20x20?text=%20" className="rounded me-2" alt="" />
-          <strong className="me-auto">My Pets</strong>
+          <strong className="me-auto">La Libreria</strong>
          
         </Toast.Header>
         <Toast.Body >

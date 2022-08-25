@@ -24,6 +24,7 @@ const Login = () => {
                 navigate('/');
             }).catch(err => {
                 console.log(err.message);
+                showNotification(err.message, types.warn);
                 return;
             })
 

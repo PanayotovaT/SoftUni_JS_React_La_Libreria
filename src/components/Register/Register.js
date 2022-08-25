@@ -2,12 +2,14 @@ import { useNavigate } from 'react-router-dom';
 
 import * as authService from '../../services/authServices';
 import { useAuthContext } from '../../contexts/AuthContext';
+import { useNotificationContext, types } from '../../contexts/NotificationContext';
 
 import './Register.css';
 
 const Register = () => {
     const navigate = useNavigate();
     const { login } = useAuthContext();
+    const { showNotification } = useNotificationContext();
 
     const registerHandler = (e) => {
         e.preventDefault();
@@ -18,10 +20,12 @@ const Register = () => {
         const registerData = { firstName, lastName, email, gender, password, repass};
 
         if (firstName == '' || lastName == '' || email == '' || password == '') {
+            showNotification('All fields are required', types.error)
             throw new Error('All fields are required');
         }
 
         if(password !== repass) {
+            showNotification('Passwords don\'t match!', types.error);
             throw new Error('Passwords don\'t match!');
         }
 
@@ -29,10 +33,11 @@ const Register = () => {
             .then(data => {
                 console.log(data);
                 login(data);
+                showNotification('You have registered successfully!', types.success)
                 navigate('/')
             }).catch(err => {
-                console.error(err)
-                navigate('/')
+                showNotification(err.message, types.warn);
+                return;
             })
 
 
