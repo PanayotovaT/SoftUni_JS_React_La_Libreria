@@ -26,24 +26,27 @@ const Details = () => {
             })
     }, [bookId, navigate]);
 
-    const deleteHandler = (e) =>{
+    const modalHandler = (e) => {
         e.preventDefault();
-
         setShowModal(true);
+    }
 
-        // bookService.deleteBook(bookId)
-        //     .then(res => {
-        //         navigate('/catalogue');
-        //     })
-        //     .catch(err => {
-        //         console.error(err.message);
-        //         return;
-        //     })
+    const deleteHandler = (id) =>{
+
+        bookService.deleteBook(id)
+        .then(res => {
+                setShowModal(false);
+                navigate('/catalogue');
+            })
+            .catch(err => {
+                console.error(err.message);
+                return;
+            });
     }
 
     const ownerLinks = (<>
         <Link to={`/update/${book._id}`} className="details-btn">Update</Link>
-        <Link to={`/delete/${book._id}`} className="details-btn" onClick={deleteHandler}>Delete</Link>
+        <Link to={`/delete/${book._id}`} className="details-btn" onClick={modalHandler}>Delete</Link>
         {showModal && <Modal closeModal={setShowModal} book={book} deleteHandler={deleteHandler} />}
     </>);
 

@@ -3,7 +3,8 @@ import { useState } from 'react';
 
 const Modal = ({ 
   closeModal,
-  deleteHandler
+  deleteHandler,
+  book
  }) => {
 
 
@@ -24,7 +25,7 @@ const Modal = ({
       </div>
       <div className="modal-footer">
         <button onClick={() => closeModal(false)}> Cancel </button>
-        <button onClick={() =>deleteHandler(book.id)}> Delete Item</button>
+        <button onClick={() =>deleteHandler(book._id)}> Delete Item</button>
       </div>
     </div>
   );
