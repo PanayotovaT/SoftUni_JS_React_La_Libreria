@@ -51,3 +51,26 @@
    flex-direction: column;
    flex-wrap: wrap;
 }
+
+.modal-footer {
+    flex: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-footer button {
+    width: 150px;
+    height: 45px;
+    margin: 10px;
+    border: none;
+    background-color: cornflowerblue;
+    color: white;
+    border-radius: 8px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.cancel-btn {
+    background-color: crimson !important;
+}
