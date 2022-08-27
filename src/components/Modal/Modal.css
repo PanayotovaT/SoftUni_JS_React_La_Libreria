@@ -40,3 +40,14 @@
     cursor: pointer;
 
 }
+
+.modal-body{
+    display: flex;
+   flex: 50%;
+   justify-content: center;
+   align-items: center;
+   font-size: 1.3rem;
+   text-align: center;
+   flex-direction: column;
+   flex-wrap: wrap;
+}
