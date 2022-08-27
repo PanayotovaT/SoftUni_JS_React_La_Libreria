@@ -4,13 +4,17 @@ import { useState, useEffect } from 'react';
 import * as bookService from '../../services/bookService';
 import { useAuthContext } from '../../contexts/AuthContext';
 
-import './Details.css'
+
+
+import './Details.css';
+import Modal from '../Modal/Modal';
 
 const Details = () => {
     const navigate = useNavigate();
     const { bookId } = useParams();
     const [book, setBook] = useState({});
     const { user } = useAuthContext();
+    const [showModal, setShowModal] = useState(false);
 
     useEffect(() => {
         bookService.getOne(bookId)
@@ -25,19 +29,22 @@ const Details = () => {
     const deleteHandler = (e) =>{
         e.preventDefault();
 
-        bookService.deleteBook(bookId)
-            .then(res => {
-                navigate('/catalogue');
-            })
-            .catch(err => {
-                console.error(err.message);
-                return;
-            })
+        setShowModal(true);
+
+        // bookService.deleteBook(bookId)
+        //     .then(res => {
+        //         navigate('/catalogue');
+        //     })
+        //     .catch(err => {
+        //         console.error(err.message);
+        //         return;
+        //     })
     }
 
     const ownerLinks = (<>
         <Link to={`/update/${book._id}`} className="details-btn">Update</Link>
         <Link to={`/delete/${book._id}`} className="details-btn" onClick={deleteHandler}>Delete</Link>
+        {showModal && <Modal closeModal={setShowModal} book={book} deleteHandler={deleteHandler} />}
     </>);
 
     const userLinks = (<>
