@@ -28,9 +28,16 @@
 
 }
 
+.modal-header {
+    flex: 20%;
+    flex-direction: column;
+}
+
 .header-btn-container {
-    display: flex;
-    justify-content: flex-end;
+    /* display: flex;
+    justify-content: flex-end; */
+    align-self: end;
+    margin-right: 20px;
 }
 
 .x-btn {
