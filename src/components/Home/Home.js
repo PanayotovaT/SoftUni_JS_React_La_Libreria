@@ -1,21 +1,37 @@
 import { useState, useEffect } from 'react';
 import * as bookService from '../../services/bookService';
+import BeatLoader from "react-spinners/BeatLoader";
 
 import './Home.css';
 import HomeCard from './HomeCard'
 
 const Home = () => {
+    const [loader, setLoader] = useState(false);
     const [books, setBooks] = useState([]);
 
     useEffect(() => {
-        bookService.getAll()
+        setLoader(true);
+
+        setTimeout(() => {
+            bookService.getAll()
             .then(res => {
                 setBooks(Object.values(res));
+                setLoader(false);
             })
             .catch(err => {
                 console.error(err.message);
             })
+        }, 300);
+    
     }, []);
+
+    const booksSection = books.length > 0 
+    ? books.slice(0,3).map(x => <HomeCard card={x} key={x._id} />)
+    :   (<article className="home-nodata-image-article">
+             <h1>No books in the database!</h1>
+             <img src="https://images.theconversation.com/files/45159/original/rptgtpxd-1396254731.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=754&fit=clip" alt="no data" />
+        </article>);
+
 
     return (
         <section className="home-section">
@@ -27,13 +43,11 @@ const Home = () => {
 
             </article>
             <section className="home-book-section">
-                {books.length > 0
-                    ? books.slice(0,3).map(x => <HomeCard card={x} key={x._id} />)
-                    : (<article className="home-nodata-image-article">
-                        <h1>No books in the database!</h1>
-                        <img src="https://images.theconversation.com/files/45159/original/rptgtpxd-1396254731.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=754&fit=clip" alt="no data" />
-                    </article>)
+                {loader 
+                    ? <BeatLoader color={'#36D7B7'} loading={loader} size={25} />
+                    : booksSection
                 }
+                
 
             </section >
 
