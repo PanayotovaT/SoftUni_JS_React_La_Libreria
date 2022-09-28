@@ -33,11 +33,14 @@ const Search = () => {
         e.preventDefault();
         let searchedValue = e.target.value.toLowerCase();
         setSearchInput(searchedValue);
-        searchParams.set('searching', searchedValue);
-        setSearchParams(searchParams);
-        
+
+
         if (searchedValue) {
             setNoBooksToShow(false);
+
+            searchParams.set('searching', searchedValue);
+            setSearchParams(searchParams);
+
             setFoundBooks(() => {
                 let foundBooks = books.filter(x => {
                     if (
@@ -56,6 +59,8 @@ const Search = () => {
 
                 return foundBooks.length > 0 ? foundBooks : [];
             })
+        } else {
+            setSearchParams('');
         }
 
 
