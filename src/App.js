@@ -18,6 +18,7 @@ import MyProfile from './components/MyProfile/MyProfile';
 import PrivateRoute from './common/PrivateRoute';
 import PublicRoute from './common/PublicRoute';
 import Notification from './common/Notification';
+import Search from './components/Catalogue/Search/Search';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
               <Route path="/create" element={<Create />} />
               <Route path="/details/:bookId" element={<Details />} />
               <Route path="/update/:bookId" element={<UpdateBook />} />
+              <Route path="/search" element={<Search />} />
               <Route path="/my-profile" element={<MyProfile />} />
               <Route path="/logout" element={<Logout />} />
             </Route>

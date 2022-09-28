@@ -1,0 +1,18 @@
+.searchSection {
+    margin: 60px;
+}
+
+.searchField {
+    margin: 60px;
+}
+
+.searchFieldLabel {
+    margin-right: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#search {
+    width: 300px;
+}

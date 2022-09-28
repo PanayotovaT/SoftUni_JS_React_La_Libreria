@@ -15,6 +15,7 @@ const Header = () => {
 
     const userLinks = (<>
         <li className="libreria-header-list-item"><NavLink className={activeClass} to="/create">Create</NavLink></li>
+        <li className="libreria-header-list-item"><NavLink className={activeClass} to="/search">Search</NavLink></li>
         <li className="libreria-header-list-item"><NavLink className={activeClass} to="/my-profile">My Profile</NavLink></li>
         <li className="libreria-header-list-item"><NavLink className="libreria-header-list-link" to="/logout">Logout</NavLink></li>
     
