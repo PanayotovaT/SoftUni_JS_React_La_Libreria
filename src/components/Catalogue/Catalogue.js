@@ -18,7 +18,7 @@ const Catalogue = () => {
                 setLoader(false);
             })
             .catch(err => {
-                console.log(err.message);
+                setLoader(false);
                 return;
             })
     }, []);

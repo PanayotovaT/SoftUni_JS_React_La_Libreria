@@ -21,7 +21,7 @@ const MyProfile = () => {
                 setLoader(false);
             })
             .catch(err => {
-                console.log(err.message);
+                setLoader(false);
                 return;
             })
     }, [user._id]);
