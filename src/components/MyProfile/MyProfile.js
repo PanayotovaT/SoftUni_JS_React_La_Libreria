@@ -27,7 +27,7 @@ const MyProfile = () => {
     }, [user._id]);
 
     const booksSection = books.length > 0
-        ? books.map(x => <ProfileCard key="x._id" card={x} />)
+        ? books.map(x => <ProfileCard key={x._id} card={x} />)
         : (<div className="profile-nodata">
             <h2 className="profile-nodata-msg">No Books in database!</h2>
             <article className="profile-nodata-article-img">
