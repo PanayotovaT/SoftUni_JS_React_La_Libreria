@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import BeatLoader from "react-spinners/BeatLoader";
 import * as bookService from '../../../services/bookService';
 import CatalogueCard from '../CatalogueCard';
@@ -12,6 +13,7 @@ const Search = () => {
     const [searchInput, setSearchInput] = useState('');
     const [foundBooks, setFoundBooks] = useState([]);
     const [noBooksToShow, setNoBooksToShow] = useState(false);
+    const [searchParams, setSearchParams] = useSearchParams();
 
 
     useEffect(() => {
@@ -31,6 +33,9 @@ const Search = () => {
         e.preventDefault();
         let searchedValue = e.target.value.toLowerCase();
         setSearchInput(searchedValue);
+        searchParams.set('searching', searchedValue);
+        setSearchParams(searchParams);
+        
         if (searchedValue) {
             setNoBooksToShow(false);
             setFoundBooks(() => {
