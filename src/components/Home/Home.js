@@ -20,6 +20,7 @@ const Home = () => {
             })
             .catch(err => {
                 console.error(err.message);
+                setLoader(false);
             })
         }, 300);
     
