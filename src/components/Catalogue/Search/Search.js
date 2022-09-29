@@ -29,6 +29,14 @@ const Search = () => {
             })
     }, []);
 
+    const onStart = () => {
+        let searchedValue = searchParams.get('searching');
+        if(searchedValue) {
+            setSearchInput(searchedValue);
+            updateFoundBooks(searchedValue);
+        }
+    }
+   
     const onSearchChangeHandler = (e) => {
         e.preventDefault();
         let searchedValue = e.target.value.toLowerCase();
@@ -40,32 +48,34 @@ const Search = () => {
 
             searchParams.set('searching', searchedValue);
             setSearchParams(searchParams);
+            updateFoundBooks(searchedValue);
 
-            setFoundBooks(() => {
-                let foundBooks = books.filter(x => {
-                    if (
-                        x.title.toLowerCase().includes(searchedValue)
-                        || x.category.toLowerCase().includes(searchedValue)
-                        || x.author.toLowerCase().includes(searchedValue)
-                    ) {
-                        return x;
-                    } else {
-                        return null;
-                    }
-                });
-                if(foundBooks.length == 0) {
-                    setNoBooksToShow(true);
-                }
-
-                return foundBooks.length > 0 ? foundBooks : [];
-            })
         } else {
             setSearchParams('');
         }
 
+    }
 
+    const updateFoundBooks = (searchedValue) => {
+        
+        setFoundBooks(() => {
+            let foundBooks = books.filter(x => {
+                if (
+                    x.title.toLowerCase().includes(searchedValue)
+                    || x.category.toLowerCase().includes(searchedValue)
+                    || x.author.toLowerCase().includes(searchedValue)
+                ) {
+                    return x;
+                } else {
+                    return null;
+                }
+            });
+            if (foundBooks.length == 0) {
+                setNoBooksToShow(true);
+            }
 
-
+            return foundBooks.length > 0 ? foundBooks : [];
+        })
     }
 
     let showBooks = (foundBooks.length > 0 || noBooksToShow) ? foundBooks : books;
@@ -82,7 +92,7 @@ const Search = () => {
 
     return (
         <>
-            <section className="styels.searchSection">
+            <section className="styels.searchSection" onLoad={onStart}>
                 <div className="search-colection">
                     <div className={styles.searchField}>
                         <label htmlFor="search" className={styles.searchFieldLabel}>Search here </label>
